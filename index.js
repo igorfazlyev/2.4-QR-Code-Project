@@ -26,8 +26,8 @@ inquirer.prompt(questions).then((answers)=>{
             console.log('txt file written successfully');
         }
     });
-    const qr_svg = qr.image(userEnteredURL, {type:'png'});
-    qr_svg.pipe(fs.createWriteStream(`${userEnteredURL}.png`));
+    const qr_png = qr.image(userEnteredURL, {type:'png'});
+    qr_png.pipe(fs.createWriteStream(`${userEnteredURL}.png`));
     console.log('png file created successfully');
 
 }).catch((error)=>{
